@@ -1,0 +1,21 @@
+From: Sandro Tosi <morph@debian.org>
+Date: Thu, 26 Apr 2018 22:10:42 -0400
+Subject: use debian mathjax.js
+
+---
+ doc/conf.py | 3 +++
+ 1 file changed, 3 insertions(+)
+
+Index: networkx/doc/conf.py
+===================================================================
+--- networkx.orig/doc/conf.py
++++ networkx/doc/conf.py
+@@ -202,6 +202,8 @@ default_role = "obj"
+ 
+ numpydoc_show_class_members = False
+ 
++# Debian change, use local MathJax
++mathjax_path = 'MathJax.js'
+ 
+ def setup(app):
+     app.add_css_file("custom.css")

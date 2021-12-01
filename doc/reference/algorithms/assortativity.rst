@@ -7,7 +7,7 @@ Assortativity
    :toctree: generated/
 
 Assortativity
--------------   
+-------------
 .. autosummary::
    :toctree: generated/
 
@@ -17,7 +17,7 @@ Assortativity
    degree_pearson_correlation_coefficient
 
 Average neighbor degree
------------------------   
+-----------------------
 .. autosummary::
    :toctree: generated/
 
@@ -40,5 +40,16 @@ Mixing
 
    attribute_mixing_matrix
    degree_mixing_matrix
-   degree_mixing_dict
+   numeric_mixing_matrix
    attribute_mixing_dict
+   degree_mixing_dict
+   mixing_dict
+
+Pairs
+-----
+.. autosummary::
+   :toctree: generated/
+
+   node_attribute_xy
+   node_degree_xy
+

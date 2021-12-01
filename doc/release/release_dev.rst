@@ -1,7 +1,7 @@
-Announcement: NetworkX 2.2
+Announcement: NetworkX 2.6
 ==========================
 
-We're happy to announce the release of NetworkX 2.2!
+We're happy to announce the release of NetworkX 2.6!
 NetworkX is a Python package for the creation, manipulation, and study of the
 structure, dynamics, and functions of complex networks.
 

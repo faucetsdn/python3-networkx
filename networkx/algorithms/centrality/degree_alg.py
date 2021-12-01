@@ -1,20 +1,7 @@
-#    Copyright (C) 2004-2018 by
-#    Aric Hagberg <hagberg@lanl.gov>
-#    Dan Schult <dschult@colgate.edu>
-#    Pieter Swart <swart@lanl.gov>
-#    All rights reserved.
-#    BSD license.
-#
-# Authors: Aric Hagberg (hagberg@lanl.gov)
-#          Pieter Swart (swart@lanl.gov)
-#          Sasha Gutfraind (ag362@cornell.edu)
 """Degree centrality measures."""
-import networkx as nx
 from networkx.utils.decorators import not_implemented_for
 
-__all__ = ['degree_centrality',
-           'in_degree_centrality',
-           'out_degree_centrality']
+__all__ = ["degree_centrality", "in_degree_centrality", "out_degree_centrality"]
 
 
 def degree_centrality(G):
@@ -46,13 +33,15 @@ def degree_centrality(G):
     be higher than n-1 and values of degree centrality greater than 1
     are possible.
     """
-    centrality = {}
+    if len(G) <= 1:
+        return {n: 1 for n in G}
+
     s = 1.0 / (len(G) - 1.0)
     centrality = {n: d * s for n, d in G.degree()}
     return centrality
 
 
-@not_implemented_for('undirected')
+@not_implemented_for("undirected")
 def in_degree_centrality(G):
     """Compute the in-degree centrality for nodes.
 
@@ -71,7 +60,7 @@ def in_degree_centrality(G):
 
     Raises
     ------
-    NetworkXNotImplemented:
+    NetworkXNotImplemented
         If G is undirected.
 
     See Also
@@ -87,13 +76,15 @@ def in_degree_centrality(G):
     be higher than n-1 and values of degree centrality greater than 1
     are possible.
     """
-    centrality = {}
+    if len(G) <= 1:
+        return {n: 1 for n in G}
+
     s = 1.0 / (len(G) - 1.0)
     centrality = {n: d * s for n, d in G.in_degree()}
     return centrality
 
 
-@not_implemented_for('undirected')
+@not_implemented_for("undirected")
 def out_degree_centrality(G):
     """Compute the out-degree centrality for nodes.
 
@@ -112,7 +103,7 @@ def out_degree_centrality(G):
 
     Raises
     ------
-    NetworkXNotImplemented:
+    NetworkXNotImplemented
         If G is undirected.
 
     See Also
@@ -128,7 +119,9 @@ def out_degree_centrality(G):
     be higher than n-1 and values of degree centrality greater than 1
     are possible.
     """
-    centrality = {}
+    if len(G) <= 1:
+        return {n: 1 for n in G}
+
     s = 1.0 / (len(G) - 1.0)
     centrality = {n: d * s for n, d in G.out_degree()}
     return centrality
