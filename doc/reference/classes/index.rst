@@ -15,14 +15,17 @@ graph you want to represent.
 Which graph class should I use?
 ===============================
 
-===================  ========================
-Graph Type           NetworkX Class
-===================  ========================
-Undirected Simple    Graph
-Directed Simple      DiGraph
-With Self-loops      Graph, DiGraph
-With Parallel edges  MultiGraph, MultiDiGraph
-===================  ========================
++----------------+------------+--------------------+------------------------+
+| Networkx Class | Type       | Self-loops allowed | Parallel edges allowed |
++================+============+====================+========================+
+| Graph          | undirected | Yes                | No                     |
++----------------+------------+--------------------+------------------------+
+| DiGraph        | directed   | Yes                | No                     |
++----------------+------------+--------------------+------------------------+
+| MultiGraph     | undirected | Yes                | Yes                    |
++----------------+------------+--------------------+------------------------+
+| MultiDiGraph   | directed   | Yes                | Yes                    |
++----------------+------------+--------------------+------------------------+
 
 Basic graph types
 =================
@@ -44,3 +47,37 @@ Basic graph types
    :class:`~networkx.OrderedDiGraph`, :class:`~networkx.OrderedMultiGraph`,
    or :class:`~networkx.OrderedMultiDiGraph`, which behave like the base
    graph classes but give a consistent order for reporting of nodes and edges.
+
+Graph Views
+===========
+
+.. automodule:: networkx.classes.graphviews
+.. autosummary::
+   :toctree: generated/
+
+   generic_graph_view
+   subgraph_view
+   reverse_view
+
+Filters
+=======
+
+.. note:: Filters can be used with views to restrict the view (or expand it).
+   They can filter nodes or filter edges. These examples are intended to help
+   you build new ones. They may instead contain all the filters you ever need.
+
+.. automodule:: networkx.classes.filters
+.. autosummary::
+   :toctree: generated/
+
+   no_filter
+   hide_nodes
+   hide_edges
+   hide_diedges
+   hide_multidiedges
+   hide_multiedges
+   show_nodes
+   show_edges
+   show_diedges
+   show_multidiedges
+   show_multiedges

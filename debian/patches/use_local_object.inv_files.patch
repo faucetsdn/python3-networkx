@@ -1,0 +1,27 @@
+From: SVN-Git Migration <python-modules-team@lists.alioth.debian.org>
+Date: Thu, 8 Oct 2015 12:34:59 -0700
+Subject: Use a local copy of object.inv from doc.python.org and
+ docs.scipy.org, instead of downloading them each time from the internet
+
+Last-Update: 2014-06-22
+
+Patch-Name: 30_use_local_objects.inv
+---
+ doc/conf.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+Index: networkx/doc/conf.py
+===================================================================
+--- networkx.orig/doc/conf.py
++++ networkx/doc/conf.py
+@@ -192,8 +192,8 @@ latex_appendices = ["tutorial"]
+ 
+ # Intersphinx mapping
+ intersphinx_mapping = {
+-    "https://docs.python.org/3/": None,
+-    "https://numpy.org/doc/stable/": None,
++    "https://docs.python.org/3/": '/usr/share/doc/python3/html/objects.inv',
++    "https://numpy.org/doc/stable/": '/usr/share/doc/python-numpy-doc/html/objects.inv',
+ }
+ 
+ # The reST default role (used for this markup: `text`) to use for all
